@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SUBHA — Fine Art & Watercolorist Portfolio</title>
+  <meta name="description" content="Discover original watercolor artworks, fine art prints, and bespoke commissions by Subha. Experience expressive brushwork, luminous light, and rich pigment textures.">
+  <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- Dynamic Ambient Glow Mesh -->
+  <div class="ambient-glow">
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+    <div class="orb orb-4"></div>
+  </div>
+
+  <!-- Interactive Cursor Follower -->
+  <div class="cursor-glow" id="cursorGlow"></div>
+
+  <!-- Glass Header & Navigation -->
+  <header class="glass-header" id="navbar">
+    <div class="nav-container">
+      <a href="#" class="brand-logo" aria-label="SUBHA Home">
+        <img src="images/logo.svg" alt="SUBHA Studio" class="logo-img" width="180" height="45">
+      </a>
+
+      <nav class="nav-menu" id="navMenu">
+        <ul class="nav-links">
+          <li><a href="#gallery" class="nav-link active">Gallery</a></li>
+          <li><a href="#featured" class="nav-link">Spotlight</a></li>
+          <li><a href="#about" class="nav-link">About Subha</a></li>
+          <li><a href="#process" class="nav-link">Technique</a></li>
+          <li><a href="#contact" class="nav-link">Commissions</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="#contact" class="glass-btn glass-btn-sm header-cta">
+          <span>Inquire Artwork</span>
+          <svg class="btn-arrow" viewBox="0 0 20 20" fill="currentColor">
+            <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/>
+          </svg>
+        </a>
+
+        <button class="hamburger-btn" id="mobileMenuBtn" aria-label="Toggle navigation menu">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="hero-section" id="hero">
+      <div class="hero-content">
+        <div class="glass-badge hero-badge">
+          <span class="badge-dot"></span>
+          <span>Original Watercolorist &amp; Visual Storyteller</span>
+        </div>
+
+        <h1 class="hero-title">
+          Where Water Meets Light &amp; <span class="gradient-text">Emotion Becomes Art</span>
+        </h1>
+
+        <p class="hero-description">
+          Welcome to the digital atelier of <strong>Subha</strong>. Immerse yourself in handcrafted watercolor collections painted on pure 300gsm Arches cotton paper — celebrating the quiet radiance of nature, rustic cottage havens, and chromatic atmospheric poetry.
+        </p>
+
+        <div class="hero-actions">
+          <a href="#gallery" class="glass-btn glass-btn-primary">
+            <span>Explore Collection</span>
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+          </a>
+          <a href="#about" class="glass-btn glass-btn-secondary">
+            <span>The Artist's Journey</span>
+          </a>
+        </div>
+
+        <!-- Glass Stat Cards -->
+        <div class="hero-stats-grid">
+          <div class="glass-stat-card">
+            <div class="stat-number">6+</div>
+            <div class="stat-label">Featured Originals</div>
+          </div>
+          <div class="glass-stat-card">
+            <div class="stat-number">100%</div>
+            <div class="stat-label">Archival Cotton Rag</div>
+          </div>
+          <div class="glass-stat-card">
+            <div class="stat-number">Pure</div>
+            <div class="stat-label">Pigment Granulation</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Hero Visual Showcase -->
+      <div class="hero-showcase">
+        <div class="hero-glass-frame" id="heroTiltCard">
+          <div class="hero-image-wrapper">
+            <img src="images/autumn-cottage.jpg" alt="The Golden Solitude by Subha" class="hero-featured-img">
+            <div class="hero-overlay-tag">
+              <span class="tag-title">The Golden Solitude</span>
+              <span class="tag-sub">Original Watercolor • Autumn Series</span>
+            </div>
+          </div>
+          <div class="frame-reflection"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Interactive Filterable Gallery Section -->
+    <section class="gallery-section" id="gallery">
+      <div class="section-header">
+        <div class="glass-badge">
+          <span>Curated Portfolio</span>
+        </div>
+        <h2 class="section-title">Original Works &amp; Studies</h2>
+        <p class="section-subtitle">
+          Each piece is an intimate dance between pigment, moisture, and paper grain. Click any painting for high-resolution inspection and provenance details.
+        </p>
+
+        <!-- Category Filter Controls -->
+        <div class="filter-container">
+          <button class="filter-btn active" data-filter="all">All Artworks</button>
+          <button class="filter-btn" data-filter="landscapes">Landscapes &amp; Skies</button>
+          <button class="filter-btn" data-filter="wildlife">Flora &amp; Wildlife</button>
+          <button class="filter-btn" data-filter="cottages">Cottages &amp; Architecture</button>
+        </div>
+      </div>
+
+      <!-- Artwork Grid -->
+      <div class="gallery-grid" id="galleryGrid">
+        <!-- Artwork 1: Autumn Cottage -->
+        <div class="artwork-card" data-category="cottages" data-id="1">
+          <div class="card-glass-shell">
+            <div class="card-img-box">
+              <img src="images/autumn-cottage.jpg" alt="The Golden Solitude" loading="lazy">
+              <div class="card-badge">Available</div>
+              <div class="card-hover-actions">
+                <button class="preview-btn" aria-label="Inspect artwork">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="11" cy="11" r="8"/>
+                    <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+                    <line x1="11" y1="8" x2="11" y2="14"/>
+                    <line x1="8" y1="11" x2="14" y2="11"/>
+                  </svg>
+                  <span>Expand View</span>
+                </button>
+              </div>
+            </div>
+            <div class="card-details">
+              <div class="card-meta">
+                <span class="medium-tag">Ink &amp; Watercolor</span>
+                <span class="year-tag">2026</span>
+              </div>
+              <h3 class="card-title">The Golden Solitude</h3>
+              <p class="card-desc">Warm honey and burnt umber foliage enveloping a cozy hillside cottage amidst late autumn stillness.</p>
+              <div class="card-footer-info">
+                <span class="dimensions">9" &times; 12" • Arches 300gsm</span>
+                <span class="view-link">Details &rarr;</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Artwork 2: Mountain Serenity -->
+        <div class="artwork-card" data-category="landscapes" data-id="2">
+          <div class="card-glass-shell">
+            <div class="card-img-box">
+              <img src="images/mountain-serenity.jpg" alt="Azure Peaks & Nomads" loading="lazy">
+              <div class="card-badge">Original Piece</div>
+              <div class="card-hover-actions">
+                <button class="preview-btn" aria-label="Inspect artwork">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="11" cy="11" r="8"/>
+                    <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+                    <line x1="11" y1="8" x2="11" y2="14"/>
+                    <line x1="8" y1="11" x2="14" y2="11"/>
+                  </svg>
+                  <span>Expand View</span>
+                </button>
+              </div>
+            </div>
+            <div class="card-details">
+              <div class="card-meta">
+                <span class="medium-tag">Atmospheric Glaze</span>
+                <span class="year-tag">2026</span>
+              </div>
+              <h3 class="card-title">Azure Peaks &amp; Nomads</h3>
+              <p class="card-desc">Seven progressive indigo ridge layers receding into misty morning altitudes with nomadic birds in flight.</p>
+              <div class="card-footer-info">
+                <span class="dimensions">11" &times; 14" • Cold Pressed</span>
+                <span class="view-link">Details &rarr;</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Artwork 3: Sapphire Peacock -->
+        <div class="artwork-card" data-category="wildlife" data-id="3">
+          <div class="card-glass-shell">
+            <div class="card-img-box">
+              <img src="images/sapphire-peacock.jpg" alt="The Royal Plumage" loading="lazy">
+              <div class="card-badge">Featured</div>
+              <div class="card-hover-actions">
+                <button class="preview-btn" aria-label="Inspect artwork">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="11" cy="11" r="8"/>
+                    <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+                    <line x1="11" y1="8" x2="11" y2="14"/>
+                    <line x1="8" y1="11" x2="14" y2="11"/>
+                  </svg>
+                  <span>Expand View</span>
+                </button>
+              </div>
+            </div>
+            <div class="card-details">
+              <div class="card-meta">
+                <span class="medium-tag">Granulating Mineral</span>
+                <span class="year-tag">2026</span>
+              </div>
+              <h3 class="card-title">The Royal Plumage</h3>
+              <p class="card-desc">Regal peacock profile rendered with jewel-toned cerulean, cobalt, and granulating emerald splash accents.</p>
+              <div class="card-footer-info">
+                <span class="dimensions">12" &times; 16" • Cotton Rag</span>
+                <span class="view-link">Details &rarr;</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Artwork 4: Sunlit Daisy -->
+        <div class="artwork-card" data-category="wildlife" data-id="4">
+          <div class="card-glass-shell">
+            <div class="card-img-box">
+              <img src="images/sunlit-daisy.jpg" alt="Radiance in Bloom" loading="lazy">
+              <div class="card-badge">Available</div>
+              <div class="card-hover-actions">
+                <button class="preview-btn" aria-label="Inspect artwork">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="11" cy="11" r="8"/>
+                    <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+                    <line x1="11" y1="8" x2="11" y2="14"/>
+                    <line x1="8" y1="11" x2="14" y2="11"/>
+                  </svg>
+                  <span>Expand View</span>
+                </button>
+              </div>
+            </div>
+            <div class="card-details">
+              <div class="card-meta">
+                <span class="medium-tag">Negative Space Wash</span>
+                <span class="year-tag">2026</span>
+              </div>
+              <h3 class="card-title">Radiance in Bloom</h3>
+              <p class="card-desc">Luminous white daisy petals carved against an energetic wash of Prussian blue blooms and splatter textures.</p>
+              <div class="card-footer-info">
+                <span class="dimensions">10" &times; 14" • Arches 300gsm</span>
+                <span class="view-link">Details &rarr;</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Artwork 5: Ladybug Leaf -->
+        <div class="artwork-card" data-category="wildlife" data-id="5">
+          <div class="card-glass-shell">
+            <div class="card-img-box">
+              <img src="images/ladybug-leaf.jpg" alt="Emerald Dew & Crimson" loading="lazy">
+              <div class="card-badge">Study</div>
+              <div class="card-hover-actions">
+                <button class="preview-btn" aria-label="Inspect artwork">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="11" cy="11" r="8"/>
+                    <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+                    <line x1="11" y1="8" x2="11" y2="14"/>
+                    <line x1="8" y1="11" x2="14" y2="11"/>
+                  </svg>
+                  <span>Expand View</span>
+                </button>
+              </div>
+            </div>
+            <div class="card-details">
+              <div class="card-meta">
+                <span class="medium-tag">Wet-on-Wet Botanical</span>
+                <span class="year-tag">2026</span>
+              </div>
+              <h3 class="card-title">Emerald Dew &amp; Crimson</h3>
+              <p class="card-desc">A delicate macro observation of a scarlet ladybug poised gracefully along an olive-green leaf edge.</p>
+              <div class="card-footer-info">
+                <span class="dimensions">8" &times; 10" • 100% Cotton</span>
+                <span class="view-link">Details &rarr;</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Artwork 6: Rainbow Wash -->
+        <div class="artwork-card" data-category="landscapes" data-id="6">
+          <div class="card-glass-shell">
+            <div class="card-img-box">
+              <img src="images/rainbow-wash.jpg" alt="Celestial Diffusion" loading="lazy">
+              <div class="card-badge">Abstract</div>
+              <div class="card-hover-actions">
+                <button class="preview-btn" aria-label="Inspect artwork">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="11" cy="11" r="8"/>
+                    <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+                    <line x1="11" y1="8" x2="11" y2="14"/>
+                    <line x1="8" y1="11" x2="14" y2="11"/>
+                  </svg>
+                  <span>Expand View</span>
+                </button>
+              </div>
+            </div>
+            <div class="card-details">
+              <div class="card-meta">
+                <span class="medium-tag">Chromatic Dispersion</span>
+                <span class="year-tag">2026</span>
+              </div>
+              <h3 class="card-title">Celestial Diffusion</h3>
+              <p class="card-desc">Dynamic atmospheric harmony where coral sunrise tones bleed organically into amethyst and azure clouds.</p>
+              <div class="card-footer-info">
+                <span class="dimensions">12" &times; 18" • Rough Grain</span>
+                <span class="view-link">Details &rarr;</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Spotlight / Technique Section -->
+    <section class="spotlight-section" id="featured">
+      <div class="glass-spotlight-card">
+        <div class="spotlight-content">
+          <div class="glass-badge">
+            <span>Special Technique Spotlight</span>
+          </div>
+          <h2 class="spotlight-title">Controlled Chaos in Pure Pigment</h2>
+          <p class="spotlight-text">
+            Watercolor is a collaborative dialogue between human intention and aqueous fluidity. Subha layers fine French honey-based pigments over 300gsm cold-pressed cotton paper, allowing granulating minerals to settle within paper crevices to yield astonishing organic tactile depths.
+          </p>
+
+          <div class="technique-pills">
+            <div class="tech-pill">
+              <div class="pill-dot" style="background:#38bdf8;"></div>
+              <span>Glazing &amp; Layering</span>
+            </div>
+            <div class="tech-pill">
+              <div class="pill-dot" style="background:#f472b6;"></div>
+              <span>Wet-into-Wet Blending</span>
+            </div>
+            <div class="tech-pill">
+              <div class="pill-dot" style="background:#f59e0b;"></div>
+              <span>Negative Space Preservation</span>
+            </div>
+            <div class="tech-pill">
+              <div class="pill-dot" style="background:#10b981;"></div>
+              <span>Granulating Mineral Sediments</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="spotlight-preview">
+          <div class="preview-glass-stack">
+            <img src="images/mountain-serenity.jpg" alt="Blue Mountain Painting Technique" class="stack-img stack-img-top">
+            <img src="images/sapphire-peacock.jpg" alt="Peacock Feather Technique" class="stack-img stack-img-bottom">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Subha Section -->
+    <section class="about-section" id="about">
+      <div class="about-grid">
+        <div class="about-visual">
+          <div class="about-glass-portrait">
+            <div class="portrait-img-box">
+              <img src="images/rainbow-wash.jpg" alt="Subha's Color Palette" class="portrait-art">
+              <div class="portrait-badge">
+                <span class="badge-artist">SUBHA</span>
+                <span class="badge-role">Master of Atmospheric Fluidity</span>
+              </div>
+            </div>
+            <div class="palette-swatches">
+              <span class="swatch" style="background: #1e3a8a;" title="Ultramarine Deep"></span>
+              <span class="swatch" style="background: #0284c7;" title="Cerulean Sky"></span>
+              <span class="swatch" style="background: #d97706;" title="Yellow Ochre"></span>
+              <span class="swatch" style="background: #be123c;" title="Alizarin Crimson"></span>
+              <span class="swatch" style="background: #065f46;" title="Viridian Green"></span>
+            </div>
+          </div>
+        </div>
+
+        <div class="about-text-content">
+          <div class="glass-badge">
+            <span>About The Artist</span>
+          </div>
+          <h2 class="section-title">A Lifelong Reverence for Water &amp; Transparency</h2>
+          <p class="about-paragraph">
+            Hi, I'm <strong>Subha</strong>. For me, painting is not about documenting what is visible, but translating what is felt in the fleeting moments between shadows and illuminated skies.
+          </p>
+          <p class="about-paragraph">
+            Having honed the demanding disciplines of both spontaneous wet-on-wet gestures and meticulous dry-brush architectural line-work, my focus rests on capturing stillness: morning mist hovering over mountain valleys, the quiet glow of an autumn sanctuary, and the vibrant vitality of creatures great and small.
+          </p>
+
+          <div class="artist-highlights">
+            <div class="highlight-item">
+              <div class="highlight-icon">✦</div>
+              <div>
+                <h4>Archival Longevity</h4>
+                <p>All artworks are created with museum-grade lightfast pigments rated 100+ years against fading.</p>
+              </div>
+            </div>
+            <div class="highlight-item">
+              <div class="highlight-icon">✦</div>
+              <div>
+                <h4>Custom Bespoke Commissions</h4>
+                <p>Collaborating with private collectors and interior curators on site-specific watercolor visions.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Commission & Inquiries Section -->
+    <section class="contact-section" id="contact">
+      <div class="glass-contact-card">
+        <div class="contact-header">
+          <div class="glass-badge">
+            <span>Acquisitions &amp; Commissions</span>
+          </div>
+          <h2 class="contact-title">Commission a Bespoke Original</h2>
+          <p class="contact-desc">
+            Interested in acquiring an existing original painting, ordering a limited fine art giclée print, or commissioning a personal landscape or memory? Send a note below and Subha will get back to you promptly.
+          </p>
+        </div>
+
+        <form class="glass-form" id="commissionForm">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="clientName">Your Name</label>
+              <input type="text" id="clientName" name="name" placeholder="Eleanor Vance" required>
+            </div>
+            <div class="form-group">
+              <label for="clientEmail">Email Address</label>
+              <input type="email" id="clientEmail" name="email" placeholder="eleanor@example.com" required>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="inquiryType">Inquiry Type</label>
+              <select id="inquiryType" name="type" required>
+                <option value="original">Acquire an Existing Original Painting</option>
+                <option value="commission">Custom Commission Request</option>
+                <option value="print">Fine Art Giclée Prints</option>
+                <option value="exhibition">Gallery / Exhibition Collaboration</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="budgetRange">Desired Dimensions / Scope</label>
+              <input type="text" id="budgetRange" name="scope" placeholder="e.g. 12x16 inch, Landscape">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="clientMessage">Tell Subha About Your Project or Vision</label>
+            <textarea id="clientMessage" name="message" rows="4" placeholder="Describe the scene, mood, palette, or specific painting you are inquiring about..." required></textarea>
+          </div>
+
+          <button type="submit" class="glass-btn glass-btn-primary form-submit-btn" id="submitBtn">
+            <span>Send Commission Inquiry</span>
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="22" y1="2" x2="11" y2="13"/>
+              <polygon points="22 2 15 22 11 13 2 9 22 2"/>
+            </svg>
+          </button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- Glass Lightbox Modal -->
+  <div class="glass-modal" id="artworkModal" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="modal-backdrop" id="modalBackdrop"></div>
+    <div class="modal-container">
+      <button class="modal-close-btn" id="modalCloseBtn" aria-label="Close artwork viewer">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="18" y1="6" x2="6" y2="18"/>
+          <line x1="6" y1="6" x2="18" y2="18"/>
+        </svg>
+      </button>
+
+      <button class="modal-nav-btn prev-btn" id="prevBtn" aria-label="Previous artwork">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+          <polyline points="15 18 9 12 15 6"/>
+        </svg>
+      </button>
+
+      <button class="modal-nav-btn next-btn" id="nextBtn" aria-label="Next artwork">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+          <polyline points="9 18 15 12 9 6"/>
+        </svg>
+      </button>
+
+      <div class="modal-glass-card">
+        <div class="modal-img-col">
+          <img src="" alt="" id="modalImg" class="modal-artwork-img">
+        </div>
+        <div class="modal-info-col">
+          <div class="modal-meta-top">
+            <span class="modal-category-badge" id="modalCategory">Watercolor</span>
+            <span class="modal-status-badge" id="modalStatus">Available Original</span>
+          </div>
+
+          <h2 class="modal-title" id="modalTitle">Artwork Title</h2>
+          
+          <div class="modal-spec-grid">
+            <div class="modal-spec-item">
+              <span class="spec-label">Medium</span>
+              <span class="spec-value" id="modalMedium">Original Watercolor</span>
+            </div>
+            <div class="modal-spec-item">
+              <span class="spec-label">Paper</span>
+              <span class="spec-value" id="modalPaper">Arches 300gsm Cotton</span>
+            </div>
+            <div class="modal-spec-item">
+              <span class="spec-label">Dimensions</span>
+              <span class="spec-value" id="modalDimensions">11" x 14"</span>
+            </div>
+            <div class="modal-spec-item">
+              <span class="spec-label">Year Created</span>
+              <span class="spec-value" id="modalYear">2026</span>
+            </div>
+          </div>
+
+          <p class="modal-narrative" id="modalDesc">
+            Artwork narrative description will appear here.
+          </p>
+
+          <div class="modal-actions">
+            <a href="#contact" class="glass-btn glass-btn-primary modal-inquire-btn" id="modalInquireBtn">
+              <span>Inquire About This Piece</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification -->
+  <div class="glass-toast" id="toastMessage">
+    <div class="toast-icon">✓</div>
+    <div class="toast-text">Thank you! Your inquiry has been sent to Subha.</div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="glass-footer">
+    <div class="footer-container">
+      <div class="footer-brand">
+        <img src="images/logo.svg" alt="SUBHA Studio" class="footer-logo" width="160" height="40">
+        <p class="footer-tagline">Fine Watercolor Art, Atmospheric Glazes &amp; Nature Studies.</p>
+      </div>
+
+      <div class="footer-links">
+        <a href="#hero">Back to Top</a>
+        <a href="#gallery">Collection</a>
+        <a href="#about">The Artist</a>
+        <a href="#contact">Contact</a>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 SUBHA Art Studio. Handcrafted with passion. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
